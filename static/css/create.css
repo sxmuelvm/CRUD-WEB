@@ -1,0 +1,4 @@
+/* Registrar: acento verde en etiqueta y borde del panel */
+.pagina {
+    --acento: var(--verde);
+}

@@ -1,0 +1,29 @@
+/* Retirar: acento rojo y bloque de confirmacion */
+.pagina {
+    --acento: var(--rojo);
+}
+
+.confirmar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #e3b7ae;
+    border-radius: var(--radio);
+    background: #fbeeeb;
+}
+
+.confirmar__texto {
+    margin: 0;
+    color: var(--rojo-osc);
+    font-weight: 600;
+}
+
+@media (max-width: 559px) {
+    .confirmar .btn {
+        width: 100%;
+    }
+}

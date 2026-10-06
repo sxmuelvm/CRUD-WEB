@@ -1,0 +1,4 @@
+/* Modificar: acento ocre para distinguir la edicion */
+.pagina {
+    --acento: var(--ocre);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Gestión de productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <div class="cabecera__interior">
+            <h1 class="marca">
+                <span class="marca__nombre">Tienda</span>
+                <span class="marca__detalle">Gestión de productos</span>
+            </h1>
+
+            <nav class="tabs" aria-label="Secciones">
+                <a href="{{ url_for('create') }}" class="{{ 'activa' if request.endpoint == 'create' }}"{% if request.endpoint == 'create' %} aria-current="page"{% endif %}>REGISTRAR</a>
+                <a href="{{ url_for('read') }}" class="{{ 'activa' if request.endpoint == 'read' }}"{% if request.endpoint == 'read' %} aria-current="page"{% endif %}>CATALOGO</a>
+                <a href="{{ url_for('update') }}" class="{{ 'activa' if request.endpoint == 'update' }}"{% if request.endpoint == 'update' %} aria-current="page"{% endif %}>MODIFICAR</a>
+                <a href="{{ url_for('delete') }}" class="{{ 'activa' if request.endpoint == 'delete' }}"{% if request.endpoint == 'delete' %} aria-current="page"{% endif %}>RETIRAR</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

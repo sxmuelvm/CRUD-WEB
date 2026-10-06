@@ -1,0 +1,47 @@
+/* Catalogo: acento verde, buscador y botones de accion */
+.pagina {
+    --acento: var(--verde);
+}
+
+.filtro {
+    max-width: 26rem;
+    margin-bottom: 1rem;
+}
+
+#tabla tbody tr[hidden] {
+    display: none;
+}
+
+.acciones {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.accion {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--verde);
+    border-radius: var(--radio);
+    color: var(--verde);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.accion:hover {
+    background: var(--verde);
+    color: #ffffff;
+}
+
+.accion--peligro {
+    border-color: var(--rojo);
+    color: var(--rojo);
+}
+
+.accion--peligro:hover {
+    background: var(--rojo);
+    color: #ffffff;
+}

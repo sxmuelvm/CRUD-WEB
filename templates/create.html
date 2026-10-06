@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="pagina">
+    <div class="pagina__cabecera">
+        <p class="pagina__etiqueta">Nuevo ingreso</p>
+        <h2 class="pagina__titulo">Registrar producto</h2>
+        <p class="pagina__texto">Complete los datos y el producto aparecerá en el catálogo.</p>
+    </div>
+
+    <form method="post" action="{{ url_for('create') }}" class="formulario panel">
+        <div class="campo campo--completo">
+            <label for="campo-nombre">Nombre</label>
+            <input type="text" id="campo-nombre" name="nombre" maxlength="100" required>
+        </div>
+
+        <div class="campo">
+            <label for="campo-precio">Precio</label>
+            <input type="number" id="campo-precio" name="precio" step="0.01" min="0" inputmode="decimal" required>
+        </div>
+
+        <div class="campo">
+            <label for="campo-stock">Stock</label>
+            <input type="number" id="campo-stock" name="stock" min="0" value="0" required>
+        </div>
+
+        <div class="campo campo--completo">
+            <label for="campo-categoria">Categoría</label>
+            <select id="campo-categoria" name="id_categoria" required>
+                {% for c in categorias %}
+                <option value="{{ c.id_categoria }}">{{ c.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="formulario__acciones">
+            <button type="submit" class="btn">AGREGAR</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
